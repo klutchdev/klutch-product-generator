@@ -1,0 +1,30 @@
+{
+  "name": "product-generator",
+  "version": "1.0.0",
+  "description": "A fake product generator",
+  "private": false,
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "jshint test.js"
+  },
+  "author": "Kyle Leary <Kyle@madjoy.dev>",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "faker": "^5.1.0",
+    "log-symbols": "^4.0.0",
+    "progress-bar": "^0.1.1",
+    "update-notifier": "^5.0.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/klutchdev/klutch-generator"
+  },
+  "bugs": {
+    "url": "https://github.com/klutchdev/klutch-generator/issues"
+  }
+}

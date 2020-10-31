@@ -14,7 +14,7 @@
     "chalk": "^4.1.0",
     "faker": "^5.1.0",
     "log-symbols": "^4.0.0",
-    "progress-bar": "^0.1.1",
+    "progress": "^2.0.3",
     "update-notifier": "^5.0.0"
   },
   "devDependencies": {

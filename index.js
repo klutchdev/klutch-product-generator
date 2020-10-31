@@ -19,11 +19,11 @@ if (notifier.update) {
 
 // -----------------------/ Generate user data /-----------------------//
 
-// Amount of users to generate data for
-let qty = 350;
+// Amount of products to generate data for
+let qty = 50;
 
 // File output ["filename.ext"]
-const filename = "generated_users.txt";
+const filename = "generated_products.txt";
 
 // Console log icons
 const jackedUp = logSymbols.error;
@@ -56,12 +56,12 @@ const generateData = async (qty) => {
     ),
   });
 
-  let userCollection = [];
+  let productCollection = [];
 
   // Store output
   const writeFile = () => {
     try {
-      fs.writeFileSync(filename, userCollection.join("---"), {
+      fs.writeFileSync(filename, productCollection.join("---"), {
         flags: "a", // Append file ( uncomment to disable )
       });
     } catch (error) {
@@ -71,20 +71,22 @@ const generateData = async (qty) => {
 
   for (i; i <= qty - 1; i++) {
     // Template data output with handlebars
-    const userData = faker.fake(`
+    const productData = faker.fake(`
     
-    {{name.firstName}} {{name.lastName}}
+    {{commerce.productName}}
     
-    {{address.streetAddress}}
-    {{address.city}}, {{address.state}} {{address.zipCodeByState}}
+    {{commerce.productDescription}}
+
+    {{commerce.product}}
+
+    {{commerce.department}}
+
+    {{commerce.color}}
     
-    {{internet.email}}
-    {{internet.password}}
-    
-    {{image.avatar}}
+    {{image.image}}
 
 `);
-    userCollection.push(userData).toString();
+    productCollection.push(productData).toString();
     bar.tick(1);
   }
 
@@ -92,9 +94,9 @@ const generateData = async (qty) => {
   if (bar.complete) {
     log(
       gravyBaby,
-      YAY(` Generated random data for ${userCollection.length} users`)
+      YAY(` Generated random data for ${productCollection.length} products`)
     );
-    userCollection.forEach(() => writeFile());
+    productCollection.forEach(() => writeFile());
     log(gravyBaby, meh(" Data saved to ", say(`"${filename}"`)));
   }
 };

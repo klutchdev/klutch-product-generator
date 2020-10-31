@@ -1,5 +1,5 @@
 {
-  "name": "product-generator",
+  "name": "klutch-product-generator",
   "version": "1.0.0",
   "description": "A fake product generator",
   "private": false,
@@ -22,9 +22,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/klutchdev/klutch-generator"
+    "url": "https://github.com/klutchdev/klutch-product-generator"
   },
   "bugs": {
-    "url": "https://github.com/klutchdev/klutch-generator/issues"
+    "url": "https://github.com/klutchdev/klutch-product-generator/issues"
   }
 }

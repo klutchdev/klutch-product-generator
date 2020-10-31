@@ -17,7 +17,7 @@ if (notifier.update) {
   );
 }
 
-// -----------------------/ Generate user data /-----------------------//
+// -----------------------/ Generate product data /-----------------------//
 
 // Amount of products to generate data for
 let qty = 50;
@@ -31,13 +31,13 @@ const gravyBaby = logSymbols.success;
 
 // Text colors
 const yay = chalk.green;
-const YAY = chalk.green.bold;
+const YAY = yay.bold;
 
 const nay = chalk.red;
-const NAY = chalk.red.bold;
+const NAY = nay.bold;
 
 const meh = chalk.gray;
-const MEH = chalk.gray.dim;
+const MEH = meh.dim;
 
 const say = chalk.blueBright;
 const log = console.log;
@@ -45,6 +45,7 @@ const log = console.log;
 // Generate data && write output to file
 const generateData = async (qty) => {
   let i = 0;
+  let productCollection = [];
 
   const bar = new ProgressBar(` :percent [:bar] :current / :eta `, {
     complete: `${YAY("●")}`,
@@ -55,8 +56,6 @@ const generateData = async (qty) => {
       yay(chalk.magenta(` 💾 "Your code MIGHT be perfect, BUT....."`))
     ),
   });
-
-  let productCollection = [];
 
   // Store output
   const writeFile = () => {
@@ -73,17 +72,17 @@ const generateData = async (qty) => {
     // Template data output with handlebars
     const productData = faker.fake(`
     
-    {{commerce.productName}}
+  TITLE:       {{commerce.productName}}
     
-    {{commerce.productDescription}}
+  DESCRIPTION: {{commerce.productDescription}}
 
-    {{commerce.product}}
+  CATEGORY:    {{commerce.product}}
 
-    {{commerce.department}}
+  DEPARTMENT:  {{commerce.department}}
 
-    {{commerce.color}}
+  TAGS:        {{commerce.productAdjective}}, {{commerce.productAdjective}}
     
-    {{image.image}}
+  IMAGE:       {{image.image}}
 
 `);
     productCollection.push(productData).toString();

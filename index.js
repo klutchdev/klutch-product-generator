@@ -53,7 +53,11 @@ const generateData = async (qty) => {
     total: qty,
     width: [50],
     callback: log(
-      yay(chalk.magenta(` 💾 "Your code MIGHT be perfect, BUT....."`))
+      yay(
+        chalk.magenta(
+          ` 💾 "How you look at it is pretty much how you'll see it"`
+        )
+      )
     ),
   });
 
